@@ -71,16 +71,40 @@ echo"<style>
   </style>";
 
 
-$bmw = ['name'=>"BMW <br/>", 'model'=>'X5', 'speed'=>120, 'doors'=>5,'year'=>"2015 <br/><br/>"];
-$toyota = ['name1'=>"Toyota <br/>",'model1'=>'Carina', 'speed1'=>100, 'doors1'=>4,'year1'=>"1999 <br/><br/>"];
-$opel = ['name2'=>"Opel <br/>",'model2'=>'Astra', 'speed2'=>90, 'doors2'=>3,'year2'=>"2004 <br/><br/>"];
+$bmw = ['name'=>"BMW", 'model'=>"X5", 'speed'=>120, 'doors'=>5,'year'=>2015];
+$toyota = ['name'=>"Toyota",'model'=>'Carina', 'speed'=>'100', 'doors'=>'4','year'=>1999];
+$opel = ['name'=>"Opel",'model'=>'Astra', 'speed'=>'90', 'doors'=>'3','year'=>'2004'];
+
+$cars = [
+    "BMW" => $bmw,
+    "TOYOTA" => $toyota,
+    "OPEL" => $opel
+];
 
 echo "<div>";
-$cars = array_merge($bmw, $toyota, $opel);
-foreach ($cars as $elem) {
-    echo $elem . '   ';
-}
+echo $cars["BMW"]['name'];
+echo '<br/>';
+echo $cars["BMW"]['model'].' ';
+echo $cars["BMW"]['speed'].' ';
+echo $cars["BMW"]['doors'].' ';
+echo $cars["BMW"]['year'].' ';
+
+echo $cars["TOYOTA"]['name'];
+echo '<br/>';
+echo $cars["TOYOTA"]['model'].' ';
+echo $cars["TOYOTA"]['speed'].' ';
+echo $cars["TOYOTA"]['doors'].' ';
+echo $cars["TOYOTA"]['year'].' ';
+
+echo $cars["OPEL"]['name'];
+echo '<br/>';
+echo $cars["OPEL"]['model'].' ';
+echo $cars["OPEL"]['speed'].' ';
+echo $cars["OPEL"]['doors'].' ';
+echo $cars["OPEL"]['year'].' ';
+
 echo "</div>";
+
 
 echo "<br/>===================================================";
 echo "<br/><br/>Задача №6<br/><br/>";
@@ -98,9 +122,9 @@ for ($i=1; $i<=10; $i++) {
     for ($h=1; $h<=10; $h++) {
         $value=$i*$h;
         if ($value%2==0) {
-            if ($i%2==0) {
+            if ($h%2==0) {
                 echo "<td>(".$value.")</td>";
-            } else {
+            } if ($h%2==1) {
                 echo "<td>[".$value."]</td>";
             }
         } else {
