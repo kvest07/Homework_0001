@@ -11,20 +11,15 @@ echo "<br/><br/>Задача №2<br/><br/>";
     const VSEGO = 80;
     const FLOMASTER = 23;
     const KARANDASH = 40;
-    const KRASK = VSEGO-FLOMASTER-KARANDASH;
+    $krask = VSEGO-FLOMASTER-KARANDASH;
 echo "Дано:<br/>
     Всего рисунков - 80<br/>
     Рисунков фломастерами - 23<br/>
     Рисунков карандашами - 40<br/>
     Рисунков красками - ?<br/>";
 echo "<br/>Решение<br/><br/>";
-echo VSEGO;
-echo "-";
-echo FLOMASTER;
-echo "-";
-echo KARANDASH;
-echo '=';
-echo KRASK;
+echo VSEGO.'-'.FLOMASTER.'-'.KARANDASH.'='.$krask;
+;
 
 echo "<br/>===================================================";
 echo "<br/><br/>Задача №3<br/><br/>";
@@ -64,46 +59,21 @@ echo "<br/><br/>Задача №5<br/><br/>";
 
 echo"<style>
    div {
-    width: 200px;
-    border: 2px solid black;
-    padding: 10px;
+    padding: 5px;
+    width: 150px;
+    border: 1px  solid black;
    }
   </style>";
-
-
-$bmw = ['name'=>"BMW", 'model'=>"X5", 'speed'=>120, 'doors'=>5,'year'=>2015];
-$toyota = ['name'=>"Toyota",'model'=>'Carina', 'speed'=>'100', 'doors'=>'4','year'=>1999];
-$opel = ['name'=>"Opel",'model'=>'Astra', 'speed'=>'90', 'doors'=>'3','year'=>'2004'];
-
-$cars = [
-    "BMW" => $bmw,
-    "TOYOTA" => $toyota,
-    "OPEL" => $opel
-];
-
+$bmw = ['name'=>"BMW ", 'model'=>'X5', 'speed'=>120, 'doors'=>5,'year'=>"2015 <br>"];
+$toyota = ['name'=>"Toyota ",'model'=>'Camry', 'speed'=>240, 'doors'=>5,'year'=>"2018<br>"];
+$opel = ['name'=>"Opel ",'model'=>'Astra', 'speed'=>90, 'doors'=>3,'year'=>"1981 <br>"];
 echo "<div>";
-echo $cars["BMW"]['name'];
-echo '<br/>';
-echo $cars["BMW"]['model'].' ';
-echo $cars["BMW"]['speed'].' ';
-echo $cars["BMW"]['doors'].' ';
-echo $cars["BMW"]['year'].' ';
-
-echo $cars["TOYOTA"]['name'];
-echo '<br/>';
-echo $cars["TOYOTA"]['model'].' ';
-echo $cars["TOYOTA"]['speed'].' ';
-echo $cars["TOYOTA"]['doors'].' ';
-echo $cars["TOYOTA"]['year'].' ';
-
-echo $cars["OPEL"]['name'];
-echo '<br/>';
-echo $cars["OPEL"]['model'].' ';
-echo $cars["OPEL"]['speed'].' ';
-echo $cars["OPEL"]['doors'].' ';
-echo $cars["OPEL"]['year'].' ';
-
+$cars = array($bmw, $toyota, $opel);
+foreach ($cars as $elem) {
+    echo $elem['name']. ' <br>'.$elem['model']. ' '.$elem['speed']. ' '.$elem['doors']. ' '.$elem['year'];
+}
 echo "</div>";
+echo "<br/>";
 
 
 echo "<br/>===================================================";
